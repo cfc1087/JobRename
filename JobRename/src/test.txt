@@ -1,0 +1,111 @@
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg0
+ endjob
+
+AIX_JOB jobname1
+ agent uR5a4_crcfg1
+ scriptname /scriptname/app860/DELPcac01.sh
+ user ccossu1
+ args crcfg1
+ endjob
+
+aix_job jobname2
+ agent uR5w4_psweb
+ scriptname /scriptname/web860/delwcac01.sh
+ user ccossu2
+ args crcfg2
+ endjob
+
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg3
+ endjob
+
+aix_job jobname1
+ agent uR5a4_crcfg1
+ scriptname /scriptname/app860/delpcac01.sh
+ user ccossu1
+ args crcfg4
+ endjob
+
+aix_job jobname2
+ agent uR5w4_psweb
+ scriptname /scriptname/web860/delwcac01.sh
+ user ccossu2
+ args crcfg5
+ endjob
+
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg6
+ endjob
+
+aix_job jobname1
+ agent uR5a4_crcfg1
+ scriptname /scriptname/app860/delpcac01.sh
+ user ccossu1
+ args crcfg7
+ endjob
+
+aix_job jobname2
+ agent uR5w4_psweb
+ scriptname /scriptname/web860/delwcac01.sh
+ user ccossu2
+ args crcfg8
+ endjob
+
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg9
+ endjob
+
+aix_job jobname1
+ agent uR5a4_crcfg1
+ scriptname /scriptname/app860/delpcac01.sh
+ user ccossu1
+ args crcfg10
+ endjob
+
+aix_job jobname2
+ agent uR5w4_psweb
+ scriptname /scriptname/web860/delwcac01.sh
+ user ccossu2
+ args crcfg11
+ endjob
+
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg12
+ endjob
+
+aix_job jobname1
+ agent uR5a4_crcfg1
+ scriptname /scriptname/app860/delpcac01.sh
+ user ccossu1
+ args crcfg13
+ endjob
+
+aix_job jobname2
+ agent uR5w4_psweb
+ scriptname /scriptname/web860/delwcac01.sh
+ user ccossu2
+ args crcfg14
+ endjob
+
+aix_job jobname0
+ agent uR5a4_crcfg0
+ scriptname /scriptname/app860/delacac01.sh
+ user ccossu0
+ args crcfg15
+ endjob
