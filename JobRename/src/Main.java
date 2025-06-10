@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -32,6 +33,7 @@ public class Main {
 
 
         try {
+
             File file = new File("C:\\Users\\Christopher\\IdeaProjects\\JobRename\\src\\test.txt");
             JobCard jobcard = new JobCard();
             Scanner scanner = new Scanner(file);
@@ -73,14 +75,20 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
         }
-        //System.out.println("PRINTING JOBS");
-        jc.renameJobs();
-        //jc.printJobcards();
-          System.out.println("************");
-        jc.writeJobs();
-        jc.writeSelect();
-        // System.out.println(jc.getJobs().size());
-        //jc.createSelect();
+
+        try (PrintStream ps = new PrintStream("myNewJobs.txt")) {
+
+            //System.out.println("PRINTING JOBS");
+            jc.renameJobs();
+            //jc.printJobcards();
+            System.out.println("************");
+            jc.writeJobs(ps);
+
+            // jc.writeSelect(ps);
+            // System.out.println(jc.getJobs().size());
+            //jc.createSelect();
+            ps.close();
+        }
 
     }
 }

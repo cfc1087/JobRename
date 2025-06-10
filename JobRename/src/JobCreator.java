@@ -1,13 +1,12 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.ArrayList;
 
 
 public class JobCreator {
 
     private ArrayList<JobCard> jobs = new ArrayList<>();
-    private PrintStream ps = new PrintStream(new File("myNewJobs.txt"));
+
+
 
     public JobCreator() throws FileNotFoundException {
     }
@@ -28,13 +27,8 @@ public class JobCreator {
         this.jobs.add(jobcard);
     }
 
-    public PrintStream getPs() {
-        return ps;
-    }
 
-    public void setPs(PrintStream ps) {
-        this.ps = ps;
-    }
+
 
     public void renameJobs() {
         for (JobCard job : jobs) {
@@ -83,15 +77,13 @@ public class JobCreator {
 
     }
 
-    public void writeJobs() {
+    public void writeJobs(PrintStream ps) {
         for (JobCard job : jobs) {
             ps.println(job + "\n");
         }
     }
 
-    public void writeSelect() {
-
-
+    public void writeSelect(PrintStream ps) {
         ps.print(" SELECT (");
 
         int a = 0;
@@ -100,13 +92,14 @@ public class JobCreator {
                 ps.print(jobs.get(i).getJobName() + ",");
                 a++;
             } else if (a == 2 && i != jobs.size() - 1) {
-                ps.print(jobs.get(i).getJobName() + ",+" + "\n"+"\t\t ");
+                ps.print(jobs.get(i).getJobName() + ",+" + "\n" + "\t\t ");
                 a = 0;
             }
             if (i == jobs.size() - 1) {
                 ps.print(jobs.get(i).getJobName() + ")");
             }
         }
+
     }
 
 }
