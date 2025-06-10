@@ -35,7 +35,7 @@ public class Main {
             File file = new File("C:\\Users\\Christopher\\IdeaProjects\\JobRename\\src\\test.txt");
             JobCard jobcard = new JobCard();
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
+            while (scanner.hasNext()) {
 
                 String word = scanner.next();
                 if (word.equalsIgnoreCase("AIX_JOB")) {
@@ -49,7 +49,7 @@ public class Main {
                     jobcard.setAgent(scanner.next());
                     //System.out.println(scanner.next());
 
-                } else if (word.equalsIgnoreCase("scriptname")) {
+                } else if (word.equalsIgnoreCase("SCRIPTNAME")) {
                     // System.out.println("READING SCRIPT ");
                     jobcard.setScriptName(scanner.next());
                     //System.out.println("SCRIPT = " + scanner.next());
@@ -68,25 +68,18 @@ public class Main {
                     jc.addJobs(jobcard);
                     jobcard = new JobCard();
                     //System.out.println(jobcard.toString());
-
                 }
-
-
             }
-            if(!scanner.hasNextLine()){
-                scanner.close();
-
-            }
-
-
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
         }
         //System.out.println("PRINTING JOBS");
         jc.renameJobs();
-       jc.printJobcards();
-      //  System.out.println("************");
-       // System.out.println(jc.getJobs().size());
+        //jc.printJobcards();
+          System.out.println("************");
+        jc.writeJobs();
+        jc.writeSelect();
+        // System.out.println(jc.getJobs().size());
         //jc.createSelect();
 
     }

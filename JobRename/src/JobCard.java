@@ -70,7 +70,7 @@ public class JobCard {
 
     @Override
     public String toString() {
-        String jobname = this.jobType + " " + this.jobName + "\n";
+        String jobname = this.jobType.toUpperCase() + " " + this.jobName + "\n";
         String agent = " AGENT " + this.agent + "\n";
         String scriptName = " SCRIPTNAME " + this.scriptName + "\n";
         String user = " USER " + this.user + "\n";
