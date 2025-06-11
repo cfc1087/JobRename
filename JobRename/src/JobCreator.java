@@ -7,7 +7,6 @@ public class JobCreator {
     private ArrayList<JobCard> jobs = new ArrayList<>();
 
 
-
     public JobCreator() throws FileNotFoundException {
     }
 
@@ -28,8 +27,6 @@ public class JobCreator {
     }
 
 
-
-
     public void renameJobs() {
         for (JobCard job : jobs) {
             String[] s = job.getScriptName().split("/");
@@ -43,7 +40,12 @@ public class JobCreator {
             String agent = job.getAgent();
             String a = agent.substring(2, agent.indexOf("_"));
             String newName = job.getJobName() + a;
-            job.setJobName(newName.toUpperCase() + "." + job.getArgs().toUpperCase());
+            String opa = "opa";
+            if (job.getArgs().equals("NotFound") && job.getScriptName().toLowerCase().contains(opa)) {
+                job.setJobName(newName.toUpperCase() + "." + opa.toUpperCase());
+            } else {
+                job.setJobName(newName.toUpperCase() + "." + job.getArgs().toUpperCase());
+            }
         }
 
     }

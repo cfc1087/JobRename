@@ -10,8 +10,8 @@
 
 
  AIX_JOB jobname1
-  agent uR5a4_crcfg1
   scriptname /scriptname/app860/DELPcac01.sh
+  agent uR5a4_crcfg1
   user ccossu1
   args crcfg1
   endjob
@@ -68,6 +68,12 @@
   user ccossu2
   args crcfg8
   endjob
+
+ aix_job jobnameopa
+   agent uR5w4_psweb
+   scriptname /one/two/three/opa/start_opastg.sh
+   user ccossuopa
+   endjob
 
 
 

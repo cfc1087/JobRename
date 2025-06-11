@@ -67,16 +67,24 @@ public class JobCard {
     }
 
 
-
     @Override
     public String toString() {
         String jobname = this.jobType.toUpperCase() + " " + this.jobName + "\n";
         String agent = " AGENT " + this.agent + "\n";
         String scriptName = " SCRIPTNAME " + this.scriptName + "\n";
         String user = " USER " + this.user + "\n";
-        String args = " ARGS " + this.args + "\n";
+        String args ="";
+        if (!this.args.equals("NotFound")) {
+             args = " ARGS " + this.args + "\n";
+        }
+        String jobCard = "";
+        if (this.args.equals("NotFound")) {
+            jobCard = jobname + agent + scriptName + user + " ENDJOB";
 
-        String jobCard = jobname + agent + scriptName + user + args + " ENDJOB";
+        } else {
+            jobCard = jobname + agent + scriptName + user + args + " ENDJOB";
+        }
+
 
         return jobCard;
     }

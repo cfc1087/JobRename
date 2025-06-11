@@ -67,6 +67,9 @@ public class Main {
                     // System.out.println(scanner.next());
 
                 } else if (word.equalsIgnoreCase("ENDJOB")) {
+                    if(jobcard.getArgs()==null){
+                        jobcard.setArgs("NotFound");
+                    }
                     jc.addJobs(jobcard);
                     jobcard = new JobCard();
                     //System.out.println(jobcard.toString());
@@ -76,17 +79,19 @@ public class Main {
             System.out.println("An error occurred.");
         }
 
-        try (PrintStream ps = new PrintStream("myNewJobs.txt")) {
+        PrintStream ps = new PrintStream("myNewJobs.txt");
+        try {
 
             //System.out.println("PRINTING JOBS");
             jc.renameJobs();
-            //jc.printJobcards();
+            jc.printJobcards();
             System.out.println("************");
-            jc.writeJobs(ps);
-
+            //jc.writeJobs(ps);
             // jc.writeSelect(ps);
             // System.out.println(jc.getJobs().size());
             //jc.createSelect();
+
+        } finally {
             ps.close();
         }
 
